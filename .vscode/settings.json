@@ -1,0 +1,20 @@
+{
+  "files.exclude": {
+    ".dart_tool": true,
+    ".idea": true,
+    ".vscode": true,
+    "android": true,
+    "build": true,
+    "ios": true,
+    "test": true,
+    "web": true,
+    "windows": true,
+    ".gitignore": true,
+    ".metadata": true,
+    ".packages": true,
+    "analysis_options.yaml": true,
+    "fakenode_restoran_app.iml": true,
+    "pubspec.lock": true,
+    "README.md": true
+  }
+}

@@ -1,4 +1,5 @@
 import 'package:fakenode_restoran_app/features/restoran/presentation/pages/MainScreenGetx/main_screen_getx.dart';
+import 'package:fakenode_restoran_app/features/restoran/presentation/state_management/all_restoran_bindings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +10,8 @@ import 'package:get/get.dart';
 // flutter run -d chrome --web-hostname localhost --web-port 5000 --no-sound-null-safety
 
 void main() {
-  // AllDiziBindings().dependencies();
+  AllRestoranBindings()
+      .dependencies(); // burayi getx kullanimi icin uncomment et
   runApp(const MainApp());
 }
 
