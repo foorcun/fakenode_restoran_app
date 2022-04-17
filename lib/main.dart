@@ -10,20 +10,15 @@ import 'package:get/get.dart';
 
 void main() {
   // AllDiziBindings().dependencies();
-  runApp(const HttpApp());
+  runApp(const MainApp());
 }
 
-class HttpApp extends StatelessWidget {
-  const HttpApp({Key? key}) : super(key: key);
+class MainApp extends StatelessWidget {
+  const MainApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      // // initialBinding: AllDiziBindings(),
-      // // home: MainScreen(),
-      // // home: SezonScreen(),
-      // home: MainScreenGetx(),
-
       debugShowCheckedModeBanner: false,
       title: 'FakeNode Restoran App',
       // initialRoute: homePageBringer(),
