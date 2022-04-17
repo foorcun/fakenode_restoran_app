@@ -1,3 +1,4 @@
+import 'package:fakenode_restoran_app/features/restoran/data/models/restoran_model.dart';
 import 'package:fakenode_restoran_app/features/restoran/domain/entities/restoran.dart';
 import 'package:fakenode_restoran_app/features/restoran/presentation/api/restoran_api.dart';
 import 'package:fakenode_restoran_app/features/restoran/presentation/state_management/controller/restoran_controller.dart';
@@ -148,21 +149,22 @@ class CustomSlidable extends StatelessWidget {
                           child: ElevatedButton(
                             child: Text("Evet"),
                             onPressed: () async {
-                              // await cDizi.delete();
-                              print(Get.find<RestoranController>()
-                                  .restoranlar[_index]
-                                  .restoranName);
+                              //  https://www.youtube.com/watch?v=jymr1hEvfkM   //28:00 civarları
+                              //                             var uri = Uri.parse(
+                              //                                 "http://localhost:3000/restoranlar/${Get.find<RestoranController>().restoranlar[_index].id}");
+                              //                             var response =
+                              //                             await http
+                              //                                 .delete(uri)
+                              //                                 .then((value) => print(value.body));
+                              //                             print(response.body);
 
-                              //https://www.youtube.com/watch?v=jymr1hEvfkM   //28:00 civarları
-                              var uri = Uri.parse(
-                                  "http://localhost:3000/restoranlar/${Get.find<RestoranController>().restoranlar[_index].id}");
-                              // var response =
-                              await http
-                                  .delete(uri)
-                                  .then((value) => print(value.body));
-                              // print(response.body);
+                              await Get.find<RestoranController>()
+                                  .deleteRestoran(RestoranModel(
+                                      id: Get.find<RestoranController>()
+                                          .restoranlar[_index]
+                                          .id));
+
                               _loadData();
-
                               Get.back();
                             },
                           ),

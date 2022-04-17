@@ -30,4 +30,9 @@ class RestoranService {
     });
     // print(response.body);
   }
+
+  Future<void> deleteRestoran(Restoran r) async {
+    var uri = Uri.parse("http://localhost:3000/restoranlar/${r.id}");
+    await http.delete(uri);
+  }
 }
