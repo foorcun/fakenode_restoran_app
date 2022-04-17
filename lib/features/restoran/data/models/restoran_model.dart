@@ -5,7 +5,7 @@ part 'restoran_model.g.dart';
 
 @JsonSerializable()
 class RestoranModel extends Restoran {
-  RestoranModel({required int id, required String restoranName})
+  RestoranModel({int? id, String? restoranName})
       : super(id: id, restoranName: restoranName);
 
   Map<String, dynamic> toJson() => _$RestoranModelToJson(this);

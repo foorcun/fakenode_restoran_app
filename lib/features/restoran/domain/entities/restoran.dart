@@ -9,13 +9,13 @@ import 'dart:convert';
 
 class Restoran {
   // filed variabllerl gir ve generate class members
-  late int id;
-  late String restoranName;
+  int? id;
+  String? restoranName;
   // late String olusturanName;
   // late String imgUrl;
 
   Restoran({
-    required this.id,
-    required this.restoranName,
+    this.id,
+    this.restoranName,
   });
 }

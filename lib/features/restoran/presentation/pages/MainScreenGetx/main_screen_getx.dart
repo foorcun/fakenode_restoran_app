@@ -18,6 +18,12 @@ class MainScreenGetx extends StatelessWidget {
     _loadData(); // her build edildiginde data yenilenmesi icin bu kodu koy
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: _floatingPrint,
+        tooltip: 'Add new Restoran',
+        child: const Icon(Icons.add),
+      ),
+
       // body: FutureIleYaptigimiz(),
       body: Obx(
         () => ListView.builder(
@@ -27,7 +33,7 @@ class MainScreenGetx extends StatelessWidget {
               child: ListTile(
                 title: Text(Get.find<RestoranController>()
                     .restoranlar[index]
-                    .restoranName),
+                    .restoranName!),
               ),
             );
           },
@@ -35,40 +41,44 @@ class MainScreenGetx extends StatelessWidget {
       ),
     );
   }
-}
 
-class FutureIleYaptigimiz extends StatelessWidget {
-  const FutureIleYaptigimiz({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-        // future: RestoranApi.getRestoranlar(),
-        future: RestoranApi.getRestoranlar(),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return Center(
-              child: Text("Beklenmeyen bir hata oluştu..."),
-            );
-          } else if (snapshot.hasData) {
-            List<Restoran> data = snapshot.data as List<Restoran>;
-            return ListView.builder(
-                // itemCount: 2,
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  return Card(
-                    child: ListTile(
-                      title: Text(data[index].restoranName),
-                    ),
-                  );
-                });
-          } else {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        });
+  void _floatingPrint() {
+    Get.toNamed("/AddRestoranView");
   }
 }
+
+// class FutureIleYaptigimiz extends StatelessWidget {
+//   const FutureIleYaptigimiz({
+//     Key? key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return FutureBuilder(
+//         // future: RestoranApi.getRestoranlar(),
+//         future: RestoranApi.getRestoranlar(),
+//         builder: (context, snapshot) {
+//           if (snapshot.hasError) {
+//             return Center(
+//               child: Text("Beklenmeyen bir hata oluştu..."),
+//             );
+//           } else if (snapshot.hasData) {
+//             List<Restoran> data = snapshot.data as List<Restoran>;
+//             return ListView.builder(
+//                 // itemCount: 2,
+//                 itemCount: data.length,
+//                 itemBuilder: (context, index) {
+//                   return Card(
+//                     child: ListTile(
+//                       title: Text(data[index].restoranName),
+//                     ),
+//                   );
+//                 });
+//           } else {
+//             return Center(
+//               child: CircularProgressIndicator(),
+//             );
+//           }
+//         });
+//   }
+// }

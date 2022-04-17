@@ -26,4 +26,8 @@ class RestoranController extends GetxController {
     });
     return restoran.first;
   }
+
+  Future<void> addRestoran(Restoran r) async {
+    await RestoranService().addRestoran(r);
+  }
 }

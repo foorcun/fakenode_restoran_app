@@ -1,3 +1,4 @@
+import 'package:fakenode_restoran_app/features/restoran/presentation/pages/AddRestoranView/add_restoran_view.dart';
 import 'package:fakenode_restoran_app/features/restoran/presentation/pages/MainScreenGetx/main_screen_getx.dart';
 import 'package:fakenode_restoran_app/features/restoran/presentation/state_management/all_restoran_bindings.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class MainApp extends StatelessWidget {
 
       getPages: [
         GetPage(name: "/main_screen_getx", page: () => MainScreenGetx()),
+        GetPage(name: "/AddRestoranView", page: () => AddRestoranView()),
       ],
     );
   }

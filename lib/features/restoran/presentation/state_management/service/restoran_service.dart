@@ -4,6 +4,8 @@ import 'package:fakenode_restoran_app/features/restoran/domain/entities/restoran
 import 'package:http/http.dart' as http;
 
 class RestoranService {
+  Uri theUri = Uri.parse("http://127.0.0.1:3000/restoranlar");
+
   Future<List<Restoran>> getAllRestoran() async {
     print("RestoranService getAll");
 
@@ -20,5 +22,12 @@ class RestoranService {
     }
     print("RestoranService theList " + theList.toString());
     return theList;
+  }
+
+  Future<void> addRestoran(Restoran r) async {
+    var response = await http.post(theUri, body: {
+      "restoranName": r.restoranName,
+    });
+    // print(response.body);
   }
 }
