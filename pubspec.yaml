@@ -28,6 +28,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   get: ^4.6.1
+  http:
+  json_annotation: ^4.4.0
   flutter:
     sdk: flutter
 
@@ -37,6 +39,8 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  build_runner: ^2.0.0
+  json_serializable: ^6.0.0
   flutter_test:
     sdk: flutter
 
