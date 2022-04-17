@@ -30,6 +30,7 @@ dependencies:
   get: ^4.6.1
   http:
   json_annotation: ^4.4.0
+  flutter_slidable: ^1.1.0
   flutter:
     sdk: flutter
 
